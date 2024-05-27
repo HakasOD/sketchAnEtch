@@ -1,6 +1,7 @@
-function create4x4Grid() {
-    let gridContainer = document.querySelector(".grid-container");
+const gridContainer = document.querySelector(".grid-container");
+const newGridButton = document.querySelector("#new-grid-button");
 
+function create4x4Grid() {
     for(let i = 0; i < 4; i++){
         let gridSquareRow = document.createElement("div");
         gridSquareRow.classList.add("grid-row");
@@ -16,6 +17,8 @@ function create4x4Grid() {
 }
 
 function createUserGrid() {
+    deleteGrid();
+
     // amountOfSqaures must be under 100
     amountOfSqaures = undefined;
     do {
@@ -36,6 +39,17 @@ function createUserGrid() {
     }
 
 }
+
+function deleteGrid(){
+    while(gridContainer.firstChild){
+        gridContainer.removeChild(gridContainer.lastChild);
+    }
+}
+
+newGridButton.addEventListener("click", () => {
+    createUserGrid();
+}) 
+
 
 create4x4Grid();
 
