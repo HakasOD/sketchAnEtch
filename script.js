@@ -34,6 +34,11 @@ function createUserGrid() {
             let gridSquareColumn = document.createElement("div");
             gridSquareColumn.classList.add("grid-square");
             gridSquareColumn.classList.add("column")
+            gridSquareColumn.addEventListener("mouseover", (event) => {
+                gridSquareColumn.style.backgroundColor = "aqua";
+                console.log('adh')
+            })
+
             gridSquareRow.appendChild(gridSquareColumn);
         }
     }
